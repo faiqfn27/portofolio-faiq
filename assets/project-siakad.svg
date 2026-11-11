@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="siakadBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#siakadBg)" />
+
+  <!-- Browser Container -->
+  <g transform="translate(40, 30)">
+    <!-- Browser Window Frame -->
+    <rect width="720" height="440" rx="16" fill="#111827" stroke="#374151" stroke-width="2" />
+    
+    <!-- Top Bar -->
+    <rect width="720" height="42" rx="16" fill="#1f2937" />
+    <circle cx="25" cy="21" r="6" fill="#ef4444" />
+    <circle cx="45" cy="21" r="6" fill="#f59e0b" />
+    <circle cx="65" cy="21" r="6" fill="#10b981" />
+    
+    <!-- Address Bar -->
+    <rect x="110" y="10" width="460" height="22" rx="6" fill="#111827" stroke="#374151" />
+    <text x="340" y="25" fill="#9ca3af" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">siakad.sunangresik.ac.id/portal/mahasiswa</text>
+
+    <!-- Sidebar -->
+    <rect x="0" y="42" width="160" height="398" fill="#161f30" />
+    <!-- Campus Logo in sidebar -->
+    <rect x="20" y="60" width="120" height="30" rx="6" fill="url(#brandGrad)" />
+    <text x="80" y="80" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" text-anchor="middle">UNSURI GRESIK</text>
+    
+    <!-- Menu Items -->
+    <rect x="15" y="110" width="130" height="26" rx="6" fill="#2563eb" opacity="0.25" />
+    <rect x="25" y="117" width="70" height="12" rx="3" fill="#60a5fa" />
+    <rect x="25" y="150" width="90" height="10" rx="3" fill="#4b5563" />
+    <rect x="25" y="175" width="80" height="10" rx="3" fill="#4b5563" />
+    <rect x="25" y="200" width="100" height="10" rx="3" fill="#4b5563" />
+    <rect x="25" y="225" width="60" height="10" rx="3" fill="#4b5563" />
+
+    <!-- Main Content Area -->
+    <!-- Welcome Header -->
+    <text x="190" y="78" fill="#f3f4f6" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Dashboard Portal Akademik Mahasiswa</text>
+    <text x="190" y="96" fill="#9ca3af" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Program Studi Sistem Informasi • Universitas Sunan Gresik</text>
+
+    <!-- Stat Cards Row -->
+    <!-- Card 1: IPK -->
+    <g transform="translate(190, 115)">
+      <rect width="160" height="85" rx="12" fill="#1f2937" stroke="#374151" />
+      <text x="16" y="26" fill="#9ca3af" font-family="sans-serif" font-size="10" font-weight="600">INDEKS PRESTASI (IPK)</text>
+      <text x="16" y="60" fill="#38bdf8" font-family="sans-serif" font-size="28" font-weight="800">3.84</text>
+      <text x="16" y="76" fill="#10b981" font-family="sans-serif" font-size="10">✓ Sangat Memuaskan</text>
+    </g>
+
+    <!-- Card 2: SKS -->
+    <g transform="translate(365, 115)">
+      <rect width="160" height="85" rx="12" fill="#1f2937" stroke="#374151" />
+      <text x="16" y="26" fill="#9ca3af" font-family="sans-serif" font-size="10" font-weight="600">TOTAL SKS TEMPUH</text>
+      <text x="16" y="60" fill="#818cf8" font-family="sans-serif" font-size="28" font-weight="800">86 SKS</text>
+      <text x="16" y="76" fill="#9ca3af" font-family="sans-serif" font-size="10">Semester Aktif: Ganjil</text>
+    </g>
+
+    <!-- Card 3: Status KRS -->
+    <g transform="translate(540, 115)">
+      <rect width="155" height="85" rx="12" fill="#1f2937" stroke="#374151" />
+      <text x="16" y="26" fill="#9ca3af" font-family="sans-serif" font-size="10" font-weight="600">STATUS KRS</text>
+      <text x="16" y="55" fill="#10b981" font-family="sans-serif" font-size="18" font-weight="800">DISETUJUI</text>
+      <text x="16" y="76" fill="#9ca3af" font-family="sans-serif" font-size="10">Dosen Wali: Terverifikasi</text>
+    </g>
+
+    <!-- Table: Jadwal Kuliah -->
+    <g transform="translate(190, 220)">
+      <rect width="505" height="195" rx="12" fill="#1f2937" stroke="#374151" />
+      <text x="20" y="28" fill="#f3f4f6" font-family="sans-serif" font-size="13" font-weight="700">Jadwal Kuliah &amp; Rekap Nilai Semester Ini</text>
+      
+      <!-- Table Header -->
+      <rect x="15" y="42" width="475" height="26" rx="6" fill="#111827" />
+      <text x="25" y="59" fill="#9ca3af" font-family="sans-serif" font-size="10" font-weight="700">MATA KULIAH</text>
+      <text x="230" y="59" fill="#9ca3af" font-family="sans-serif" font-size="10" font-weight="700">SKS</text>
+      <text x="300" y="59" fill="#9ca3af" font-family="sans-serif" font-size="10" font-weight="700">HARI &amp; JAM</text>
+      <text x="430" y="59" fill="#9ca3af" font-family="sans-serif" font-size="10" font-weight="700">RUANGAN</text>
+
+      <!-- Row 1 -->
+      <text x="25" y="90" fill="#f3f4f6" font-family="sans-serif" font-size="11">Rekayasa Web &amp; Sistem Terdistribusi</text>
+      <text x="230" y="90" fill="#9ca3af" font-family="sans-serif" font-size="11">3</text>
+      <text x="300" y="90" fill="#38bdf8" font-family="sans-serif" font-size="11">Senin, 08:00</text>
+      <text x="430" y="90" fill="#9ca3af" font-family="sans-serif" font-size="11">Lab SI-1</text>
+      <line x1="15" y1="102" x2="490" y2="102" stroke="#374151" />
+
+      <!-- Row 2 -->
+      <text x="25" y="125" fill="#f3f4f6" font-family="sans-serif" font-size="11">Perancangan Basis Data Relasional</text>
+      <text x="230" y="125" fill="#9ca3af" font-family="sans-serif" font-size="11">3</text>
+      <text x="300" y="125" fill="#38bdf8" font-family="sans-serif" font-size="11">Rabu, 10:00</text>
+      <text x="430" y="125" fill="#9ca3af" font-family="sans-serif" font-size="11">Lab SI-2</text>
+      <line x1="15" y1="137" x2="490" y2="137" stroke="#374151" />
+
+      <!-- Row 3 -->
+      <text x="25" y="160" fill="#f3f4f6" font-family="sans-serif" font-size="11">Analisis Proses Bisnis (BPMN)</text>
+      <text x="230" y="160" fill="#9ca3af" font-family="sans-serif" font-size="11">3</text>
+      <text x="300" y="160" fill="#38bdf8" font-family="sans-serif" font-size="11">Kamis, 13:00</text>
+      <text x="430" y="160" fill="#9ca3af" font-family="sans-serif" font-size="11">R. Teori 3</text>
+    </g>
+  </g>
+</svg>

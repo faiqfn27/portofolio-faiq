@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 380" width="320" height="380">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="auraGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Glow Effect behind silhouette -->
+  <circle cx="160" cy="140" r="70" fill="url(#auraGlow)" filter="url(#softGlow)" opacity="0.6"/>
+  <ellipse cx="160" cy="340" rx="130" ry="90" fill="url(#auraGlow)" filter="url(#softGlow)" opacity="0.4"/>
+
+  <!-- Head -->
+  <circle cx="160" cy="135" r="56" fill="#f8fafc"/>
+  
+  <!-- Hair / Cap detail -->
+  <path d="M104 130 C104 75, 140 68, 160 68 C180 68, 216 75, 216 130 C202 110, 185 106, 160 106 C135 106, 118 110, 104 130 Z" fill="#334155"/>
+
+  <!-- Body / Shoulders -->
+  <path d="M45 380 C45 280, 95 240, 160 240 C225 240, 275 280, 275 380 Z" fill="#f8fafc"/>
+  
+  <!-- Collar / Shirt Detail -->
+  <path d="M125 242 L160 285 L195 242 C185 247, 172 250, 160 250 C148 250, 135 247, 125 242 Z" fill="#38bdf8"/>
+</svg>
