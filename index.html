@@ -1,0 +1,3749 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faiq Fanani | Portofolio - Mahasiswa Sistem Informasi Universitas Sunan Gresik</title>
+  <meta name="description" content="Portofolio resmi Faiq Fanani, Mahasiswa Sistem Informasi Universitas Sunan Gresik. Web developer, UI/UX enthusiast, dan perancang sistem informasi digital.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   FAIQ FANANI PORTOFOLIO - MODERN RESPONSIVE STYLESHEET
+   Inspired by clean minimalist developer portfolios with interactive features
+   ========================================================================== */
+
+/* ----------------- CSS Custom Properties (Theme Variables) ----------------- */
+:root {
+  /* Light Mode Palette */
+  --bg-primary: #fcfcfd;
+  --bg-secondary: #f4f5f7;
+  --bg-tertiary: #ebeef2;
+  --card-bg: #ffffff;
+  --card-border: #e4e7eb;
+  --card-hover-border: #cbd5e1;
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  --accent-primary: #09090b;
+  --accent-text: #ffffff;
+  --accent-blue: #2563eb;
+  --accent-glow: rgba(37, 99, 235, 0.2);
+  
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: #e2e8f0;
+  --nav-active-pill: #0f172a;
+  --nav-active-text: #ffffff;
+
+  --mockup-bg: #1e2430;
+  --mockup-bar: #161a22;
+  --tag-bg: #f1f5f9;
+  --tag-text: #334155;
+  --tag-border: #e2e8f0;
+
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Mode Palette */
+[data-theme="dark"] {
+  --bg-primary: #090d16;
+  --bg-secondary: #0f1422;
+  --bg-tertiary: #171f33;
+  --card-bg: #111728;
+  --card-border: #1f2b42;
+  --card-hover-border: #38bdf8;
+  --card-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.6);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --accent-primary: #38bdf8;
+  --accent-text: #090d16;
+  --accent-blue: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.3);
+  
+  --nav-bg: rgba(15, 20, 34, 0.85);
+  --nav-border: #223048;
+  --nav-active-pill: #38bdf8;
+  --nav-active-text: #090d16;
+
+  --mockup-bg: #0d121c;
+  --mockup-bar: #070a10;
+  --tag-bg: #182236;
+  --tag-text: #cbd5e1;
+  --tag-border: #24334f;
+}
+
+/* ----------------- Reset & Base Styles ----------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding: 5rem 0;
+}
+
+/* ----------------- 1. LOADING SCREEN ----------------- */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-primary);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.loader-logo {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-blue), #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px var(--accent-glow);
+  margin-bottom: 0.5rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.loader-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+.loader-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.loader-bar-wrap {
+  width: 180px;
+  height: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-blue), #8b5cf6);
+  border-radius: 999px;
+  animation: fillLoader 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes fillLoader {
+  0% { width: 0%; }
+  60% { width: 75%; }
+  100% { width: 100%; }
+}
+
+/* ----------------- 2. FLOATING PILL NAVBAR ----------------- */
+.header-container {
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding: 0 1rem;
+}
+
+.pill-navbar {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--nav-border);
+  padding: 0.45rem 0.8rem 0.45rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-smooth);
+  max-width: 820px;
+  width: 100%;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.brand-badge {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.brand-title {
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-item a {
+  display: block;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.nav-item:hover a {
+  color: var(--text-primary);
+}
+
+.nav-item.active a {
+  background: var(--nav-active-pill);
+  color: var(--nav-active-text);
+  font-weight: 600;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  transition: all var(--transition-fast);
+}
+
+.icon-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+  transform: scale(1.05);
+}
+
+.theme-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+[data-theme="light"] .moon-icon { display: none; }
+[data-theme="light"] .sun-icon { display: block; }
+[data-theme="dark"] .sun-icon { display: none; }
+[data-theme="dark"] .moon-icon { display: block; }
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-line {
+  width: 16px;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile dropdown */
+.mobile-menu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  display: none;
+  pointer-events: auto;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-link {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  display: block;
+}
+
+.mobile-link:hover {
+  background: var(--bg-secondary);
+}
+
+/* ----------------- 3. HERO SECTION ----------------- */
+.hero-section {
+  padding-top: 8rem;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.pulsing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.hero-greeting {
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.highlight-text {
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-typing-wrap {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.typing-cursor {
+  animation: blink 0.8s infinite;
+  color: var(--accent-blue);
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 540px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.925rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .btn-primary {
+  background: #f8fafc;
+  color: #090d16;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+}
+
+.btn-outline:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-secondary);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.hero-connect {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.connect-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.social-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.social-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+  transform: translateY(-2px);
+}
+
+/* Hero Right: Silhouette Card & Floating Pills */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.avatar-card-wrapper {
+  position: relative;
+  width: 320px;
+  height: 380px;
+}
+
+.glow-backdrop {
+  position: absolute;
+  inset: -15px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  filter: blur(25px);
+  z-index: 0;
+  border-radius: 40px;
+}
+
+.avatar-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-smooth);
+}
+
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.avatar-card:hover .avatar-photo {
+  transform: scale(1.04);
+}
+
+.change-photo-badge {
+  position: absolute;
+  bottom: 1.15rem;
+  right: 1.15rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 0.725rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.change-photo-badge:hover {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+}
+
+.change-photo-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.about-avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.silhouette-graphic {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.avatar-svg {
+  width: 250px;
+  height: 290px;
+}
+
+.avatar-badge-status {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.active-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+/* Floating info pills overlapping avatar (matches video!) */
+.floating-pill {
+  position: absolute;
+  z-index: 2;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+}
+
+.floating-pill:hover {
+  transform: translateY(-3px);
+}
+
+.pill-icon {
+  font-size: 1.2rem;
+}
+
+.pill-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pill-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.pill-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pill-top {
+  top: 15%;
+  right: -35px;
+}
+
+.pill-mid {
+  top: 48%;
+  right: -45px;
+}
+
+.pill-bottom {
+  bottom: 8%;
+  right: -25px;
+}
+
+/* ----------------- 4. INFINITE MARQUEE ----------------- */
+.marquee-wrapper {
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  padding: 0.9rem 0;
+  margin: 3rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.marquee-star {
+  color: var(--accent-blue);
+  font-size: 0.85rem;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ----------------- SECTION HEADERS ----------------- */
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.775rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.75px;
+  color: var(--text-primary);
+}
+
+/* ----------------- 5. ABOUT ME SECTION ----------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-card-portrait {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+}
+
+.silhouette-circle {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-avatar-svg {
+  width: 130px;
+  height: 130px;
+  color: var(--text-primary);
+}
+
+.portrait-details h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.portrait-details p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.campus-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  background: var(--bg-secondary);
+  border-radius: 9999px;
+  color: var(--text-secondary);
+}
+
+.about-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.info-card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: var(--card-shadow);
+}
+
+.info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-blue);
+}
+
+.info-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.info-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Personal Details Table */
+.personal-details-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.details-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.5rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.detail-val {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.text-green {
+  color: #10b981;
+}
+
+/* ----------------- 6. EXPERIENCE TIMELINE ----------------- */
+.timeline-container {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--card-border);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3.5rem;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+  padding-right: 2.5rem;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  padding-left: 2.5rem;
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 1.25rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent-blue);
+  box-shadow: 0 0 0 4px var(--bg-secondary);
+  z-index: 2;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -7px;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -7px;
+}
+
+.timeline-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-smooth);
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-hover-border);
+}
+
+.timeline-year {
+  display: inline-block;
+  font-size: 0.725rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--accent-blue);
+  margin-bottom: 0.35rem;
+}
+
+.timeline-role {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.timeline-company {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.85rem;
+}
+
+.timeline-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.timeline-item.left .tech-pills {
+  justify-content: flex-end;
+}
+
+.tech-pills span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.65rem;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--tag-border);
+  border-radius: 6px;
+}
+
+/* ----------------- 7. TECH STACK SECTION ----------------- */
+.tech-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-category-group {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.tech-category-group:last-child {
+  border-bottom: none;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.category-sub {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tech-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 1rem;
+}
+
+.tech-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.15rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--card-shadow);
+}
+
+.tech-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.tech-icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.tech-letter {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.tech-name {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ----------------- 8. SELECTED WORKS / PROJECTS ----------------- */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.filter-btn.active {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+[data-theme="dark"] .filter-btn.active {
+  background: #f8fafc;
+  color: #090d16;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--card-hover-border);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.15);
+}
+
+.project-thumb {
+  position: relative;
+  background: var(--bg-secondary);
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.06);
+}
+
+.category-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.8);
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+}
+
+/* Browser Mockups */
+.thumb-mockup {
+  width: 100%;
+  height: 100%;
+  background: var(--mockup-bg);
+  border-radius: 12px 12px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.mockup-header {
+  background: var(--mockup-bar);
+  height: 26px;
+  padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mockup-header .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.mockup-header .dot.red { background: #ef4444; }
+.mockup-header .dot.yellow { background: #eab308; }
+.mockup-header .dot.green { background: #22c55e; }
+
+.mockup-url {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #64748b;
+  margin-left: 0.5rem;
+}
+
+.mockup-body {
+  flex: 1;
+  padding: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.mockup-sidebar {
+  width: 25%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+.mockup-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mockup-stat-row {
+  display: flex;
+  gap: 0.5rem;
+  height: 35px;
+}
+
+.m-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+.mockup-table {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+}
+
+/* E-Commerce Mockup */
+.catalog-view {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.catalog-hero-bar {
+  height: 35px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  border-radius: 6px;
+}
+
+.catalog-grid-items {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.c-item {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
+}
+
+/* AI Mockup */
+.chat-mockup-body {
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.chat-bubble {
+  height: 22px;
+  border-radius: 8px;
+  width: 70%;
+}
+
+.chat-bubble.left-b {
+  background: rgba(255, 255, 255, 0.12);
+  align-self: flex-start;
+}
+
+.chat-bubble.right-b {
+  background: #2563eb;
+  align-self: flex-end;
+}
+
+.chat-bubble.short {
+  width: 45%;
+}
+
+/* Project Info */
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.project-excerpt {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-tags span {
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 6px;
+}
+
+.btn-view-details {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.2rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.btn-view-details svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.btn-view-details:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.btn-view-details:hover svg {
+  transform: translateX(3px);
+}
+
+.view-more-container {
+  text-align: center;
+}
+
+.btn-secondary-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary-pill svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-secondary-pill:hover {
+  border-color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+/* ----------------- 9. CONTACT ME SECTION ----------------- */
+.contact-box-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+}
+
+.contact-card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.contact-card-sub {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.725rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  font-size: 0.925rem;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: var(--card-bg);
+}
+
+.btn-send-message {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-fast);
+}
+
+.btn-send-message:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .btn-send-message {
+  background: #f8fafc;
+  color: #090d16;
+}
+
+.send-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.quick-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.quick-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.q-icon {
+  font-size: 1.25rem;
+}
+
+.quick-card strong {
+  display: block;
+  font-size: 0.8rem;
+}
+
+.quick-card p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ----------------- 10. SITE FOOTER ----------------- */
+.site-footer {
+  border-top: 1px solid var(--card-border);
+  padding: 2.5rem 0;
+  background: var(--bg-secondary);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.footer-left p {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--text-primary);
+}
+
+/* ----------------- 11. AI ASSISTANT WIDGET (REFERENCE FEATURE) ----------------- */
+.ai-widget-wrapper {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10000;
+}
+
+.ai-launcher-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-smooth);
+}
+
+.ai-launcher-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: var(--accent-blue);
+  box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.3);
+}
+
+.ai-badge-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-blue), #8b5cf6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.ai-launcher-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.ai-btn-title {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ai-btn-status {
+  font-size: 0.68rem;
+  color: #10b981;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot-online {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+/* AI Chat Window Modal */
+.ai-chat-window {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 0.75rem);
+  right: 0;
+  width: 360px;
+  max-width: calc(100vw - 2rem);
+  height: 500px;
+  max-height: 80vh;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  flex-direction: column;
+  animation: slideUpFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ai-chat-window.open {
+  display: flex;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ai-chat-header {
+  padding: 1rem 1.25rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ai-chat-header-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ai-avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-blue), #8b5cf6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.ai-bot-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ai-bot-status {
+  font-size: 0.68rem;
+  color: #10b981;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ai-close-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.ai-close-btn:hover {
+  background: var(--card-border);
+  color: var(--text-primary);
+}
+
+.ai-chat-messages {
+  flex: 1;
+  padding: 1.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ai-msg {
+  display: flex;
+  max-width: 82%;
+}
+
+.ai-msg.bot {
+  align-self: flex-start;
+}
+
+.ai-msg.user {
+  align-self: flex-end;
+}
+
+.ai-msg-content {
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.ai-msg.bot .ai-msg-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  border-bottom-left-radius: 4px;
+}
+
+.ai-msg.user .ai-msg-content {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-bottom-right-radius: 4px;
+}
+
+[data-theme="dark"] .ai-msg.user .ai-msg-content {
+  background: #38bdf8;
+  color: #090d16;
+}
+
+.msg-time {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  text-align: right;
+}
+
+.ai-quick-prompts {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-top: 1px solid var(--card-border);
+  background: var(--bg-secondary);
+}
+
+.ai-quick-prompts::-webkit-scrollbar {
+  display: none;
+}
+
+.prompt-chip {
+  white-space: nowrap;
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.prompt-chip:hover {
+  border-color: var(--accent-blue);
+  color: var(--text-primary);
+}
+
+.ai-chat-input-bar {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid var(--card-border);
+  background: var(--card-bg);
+}
+
+.ai-chat-input-bar input {
+  flex: 1;
+  font-size: 0.85rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  color: var(--text-primary);
+}
+
+.ai-send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+[data-theme="dark"] .ai-send-btn {
+  background: #38bdf8;
+  color: #090d16;
+}
+
+.ai-send-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.typing-dots {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px 8px;
+}
+
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  background-color: var(--text-muted);
+  border-radius: 50%;
+  animation: typingBounce 1.2s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+}
+
+/* ----------------- 12. MODAL DIALOGS (PROJECT & CV) ----------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-dialog {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--card-border);
+}
+
+/* Project Modal Content Specifics */
+.modal-project-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.modal-category {
+  display: inline-block;
+  font-size: 0.725rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.modal-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.modal-project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-desc {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.modal-section-group h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.modal-features-list {
+  padding-left: 1.25rem;
+  list-style: disc;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modal-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--tag-border);
+  border-radius: 9999px;
+}
+
+.modal-project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--card-border);
+}
+
+/* CV Modal Specifics */
+.cv-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.cv-badge {
+  display: inline-block;
+  font-size: 0.725rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 0.2rem 0.65rem;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.cv-header h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+}
+
+.cv-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.cv-location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.cv-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cv-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.25rem;
+}
+
+.cv-section p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.cv-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cv-date {
+  font-size: 0.75rem;
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.cv-skills-list {
+  padding-left: 1.25rem;
+  list-style: disc;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.cv-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--card-border);
+}
+
+/* ----------------- 13. TOAST NOTIFICATION ----------------- */
+.toast-notification {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  z-index: 1000000;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toast-notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ----------------- 14. RESPONSIVE BREAKPOINTS ----------------- */
+@media (max-width: 960px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .status-pill {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-typing-wrap {
+    justify-content: center;
+  }
+
+  .hero-bio {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-connect {
+    justify-content: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-card-portrait {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .tech-category-group {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .pill-navbar {
+    padding: 0.4rem 0.75rem 0.4rem 1rem;
+  }
+
+  .hero-greeting {
+    font-size: 2.5rem;
+  }
+
+  .floating-pill {
+    display: none; /* Hide floating pill on small phones to keep clean */
+  }
+
+  .avatar-card-wrapper {
+    width: 270px;
+    height: 320px;
+  }
+
+  /* Timeline changes to single column on mobile */
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    padding-left: 3.5rem;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: 13px;
+    right: auto;
+  }
+
+  .timeline-item.left .tech-pills {
+    justify-content: flex-start;
+  }
+
+  .about-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ==================== 1. LOADING SCREEN ==================== -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="logo-text">FF</span>
+      </div>
+      <h2 class="loader-title">Faiq Fanani</h2>
+      <p class="loader-subtitle">PORTFOLIO LOADING</p>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. FLOATING PILL NAVBAR ==================== -->
+  <header class="header-container">
+    <nav class="pill-navbar" id="navbar">
+      <a href="#home" class="nav-brand">
+        <span class="brand-badge">FF.</span>
+        <span class="brand-title">PORTFOLIO.</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-item active"><a href="#home">Home</a></li>
+        <li class="nav-item"><a href="#about">About</a></li>
+        <li class="nav-item"><a href="#experience">Experience</a></li>
+        <li class="nav-item"><a href="#tech-stack">Tech Stack</a></li>
+        <li class="nav-item"><a href="#projects">Projects</a></li>
+        <li class="nav-item"><a href="#contact">Contacts</a></li>
+      </ul>
+
+      <!-- Right Controls: Theme Toggle & Mobile Menu -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn theme-btn" aria-label="Ganti Tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="mobile-toggle" class="icon-btn mobile-menu-btn" aria-label="Buka Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-menu" class="mobile-menu">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#tech-stack" class="mobile-link">Tech Stack</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#contact" class="mobile-link">Contacts</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== 3. HERO SECTION ==================== -->
+  <section id="home" class="hero-section section-padding">
+    <div class="container hero-container">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="status-pill">
+          <span class="pulsing-dot"></span>
+          <span>Open for Projects & Collaborations</span>
+        </div>
+
+        <h1 class="hero-greeting">
+          Hi, I'm <span class="highlight-text">Faiq Fanani</span>
+        </h1>
+
+        <div class="hero-typing-wrap">
+          <span class="typing-text" id="typewriter"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+
+        <p class="hero-bio">
+          Halo! Saya mahasiswa <strong>Sistem Informasi di Universitas Sunan Gresik</strong>. Saya memiliki passion mendalam dalam pengembangan web modern, perancangan antarmuka yang intuitif, serta analisis sistem untuk menghadirkan solusi digital yang fungsional dan berdampak nyata.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Work</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Social Connect -->
+        <div class="hero-connect">
+          <span class="connect-label">CONNECT</span>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="mailto:faiqfanani27@gmail.com" class="social-btn" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual & Floating Info Cards (matching reference video) -->
+      <div class="hero-visual">
+        <div class="avatar-card-wrapper">
+          <div class="glow-backdrop"></div>
+          
+          <!-- Avatar Photo Card -->
+          <div class="avatar-card" id="hero-avatar-card">
+            <img src="assets/profil.jpg.jpg" alt="Faiq Fanani" class="avatar-photo" id="avatar-photo-img" onerror="this.onerror=null; this.src='assets/default-avatar.svg';">
+            
+            <!-- Quick change photo button -->
+            <label for="photo-file-input" class="change-photo-badge" title="Klik untuk memilih foto dari komputer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <span>Ubah Foto</span>
+            </label>
+            <input type="file" id="photo-file-input" accept="image/*" style="display: none;">
+
+            <div class="avatar-badge-status">
+              <span class="active-badge-dot"></span>
+              <span>Online • Gresik, ID</span>
+            </div>
+          </div>
+
+          <!-- Floating Info Pills (Reference feature) -->
+          <div class="floating-pill pill-top">
+            <div class="pill-icon">🎓</div>
+            <div class="pill-text">
+              <span class="pill-label">Universitas</span>
+              <span class="pill-value">Sunan Gresik</span>
+            </div>
+          </div>
+
+          <div class="floating-pill pill-mid">
+            <div class="pill-icon">💻</div>
+            <div class="pill-text">
+              <span class="pill-label">Program Studi</span>
+              <span class="pill-value">Sistem Informasi</span>
+            </div>
+          </div>
+
+          <div class="floating-pill pill-bottom">
+            <div class="pill-icon">⚡</div>
+            <div class="pill-text">
+              <span class="pill-label">Focus Area</span>
+              <span class="pill-value">Web & System Dev</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. INFINITE MARQUEE TICKER ==================== -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>FAIQ FANANI</span> <span class="marquee-star">✦</span>
+        <span>SISTEM INFORMASI</span> <span class="marquee-star">✦</span>
+        <span>UNIVERSITAS SUNAN GRESIK</span> <span class="marquee-star">✦</span>
+        <span>FULLSTACK WEB DEVELOPER</span> <span class="marquee-star">✦</span>
+        <span>UI/UX DESIGNER</span> <span class="marquee-star">✦</span>
+        <span>DATABASE & SYSTEM ANALYSIS</span> <span class="marquee-star">✦</span>
+        <span>PROBLEM SOLVER</span> <span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>FAIQ FANANI</span> <span class="marquee-star">✦</span>
+        <span>SISTEM INFORMASI</span> <span class="marquee-star">✦</span>
+        <span>UNIVERSITAS SUNAN GRESIK</span> <span class="marquee-star">✦</span>
+        <span>FULLSTACK WEB DEVELOPER</span> <span class="marquee-star">✦</span>
+        <span>UI/UX DESIGNER</span> <span class="marquee-star">✦</span>
+        <span>DATABASE & SYSTEM ANALYSIS</span> <span class="marquee-star">✦</span>
+        <span>PROBLEM SOLVER</span> <span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 5. ABOUT ME SECTION ==================== -->
+  <section id="about" class="about-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DISCOVER</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Silhouette & Identity Visual -->
+        <div class="about-visual">
+          <div class="about-card-portrait">
+            <div class="silhouette-circle">
+              <img src="assets/profile.jpg" alt="Faiq Fanani" class="about-avatar-photo" id="about-avatar-img" onerror="this.onerror=null; this.src='assets/default-avatar.svg';">
+            </div>
+            <div class="portrait-details">
+              <h3>Faiq Fanani</h3>
+              <p>Undergraduate Student</p>
+              <span class="campus-badge">📍 Universitas Sunan Gresik</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story, Approach & Personal Details Grid -->
+        <div class="about-info">
+          <div class="about-two-col">
+            <div class="info-card">
+              <div class="info-card-header">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <h3>Who Am I</h3>
+              </div>
+              <p>
+                Saya adalah mahasiswa program studi <strong>Sistem Informasi di Universitas Sunan Gresik</strong>. Ketertarikan saya terletak pada persimpangan antara logika pemrograman, perancangan arsitektur data, dan pengalaman pengguna digital yang intuitif serta berdaya guna tinggi bagi organisasi.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-header">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <h3>My Approach</h3>
+              </div>
+              <p>
+                Saya mengutamakan <em>clean code</em>, performa tinggi, desain responsif multi-device, serta pendekatan berbasis data. Setiap project dirancang dengan analisis kebutuhan yang matang untuk memastikan solusi teknologi tepat guna dan mudah dikembangkan lebih lanjut.
+              </p>
+            </div>
+          </div>
+
+          <!-- Personal Details Table/Cards (matching reference video) -->
+          <div class="personal-details-card">
+            <h4 class="details-card-title">Personal Details</h4>
+            <div class="details-grid">
+              <div class="detail-item">
+                <span class="detail-label">NAME</span>
+                <span class="detail-val">Faiq Fanani</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">EDUCATION</span>
+                <span class="detail-val">Universitas Sunan Gresik</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">MAJOR</span>
+                <span class="detail-val">Sistem Informasi (S1)</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">LOCATION</span>
+                <span class="detail-val">Gresik, Jawa Timur, Indonesia</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">STATUS</span>
+                <span class="detail-val text-green">Mahasiswa Aktif</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">EMAIL</span>
+                <span class="detail-val">faiqfanani27@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. EXPERIENCE / EDUCATION TIMELINE ==================== -->
+  <section id="experience" class="experience-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CAREER PATH</span>
+        <h2 class="section-title">Work & Academic Experience</h2>
+      </div>
+
+      <!-- Vertical Timeline with Center Stem (Reference Video Style) -->
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2025 - SEKARANG</span>
+            <h3 class="timeline-role">Mahasiswa Sistem Informasi</h3>
+            <h4 class="timeline-company">UNIVERSITAS SUNAN GRESIK</h4>
+            <p class="timeline-desc">
+              Menempuh studi sarjana dengan fokus pada perancangan sistem informasi, rekayasa perangkat lunak web, pemodelan proses bisnis (BPMN), manajemen basis data relasional (RDBMS), serta implementasi algoritma komputasi untuk efisiensi sistem informasi.
+            </p>
+            <div class="tech-pills">
+              <span>SISTEM INFORMASI</span>
+              <span>DATABASE DESIGN</span>
+              <span>UI/UX DESIGN</span>
+              <span>WEB ENGINEERING</span>
+              <span>ALGORITMA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2025 - SEKARANG</span>
+            <h3 class="timeline-role">Junior Web & System Developer</h3>
+            <h4 class="timeline-company">PROJECT & LAB RISET KAMPUS</h4>
+            <p class="timeline-desc">
+              Mengembangkan prototipe aplikasi web terintegrasi untuk kebutuhan administrasi akademik dan inventaris digital. Berperan aktif dalam perancangan skema database, pembuatan antarmuka modern yang ramah pengguna, serta integrasi endpoint REST API.
+            </p>
+            <div class="tech-pills">
+              <span>HTML5 / CSS3</span>
+              <span>JAVASCRIPT</span>
+              <span>PHP</span>
+              <span>MYSQL</span>
+              <span>TAILWIND CSS</span>
+              <span>GIT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2024 - SEKARANG</span>
+            <h3 class="timeline-role">Freelance Web Developer & Tech Explorer</h3>
+            <h4 class="timeline-company">INDEPENDENT PROJECTS</h4>
+            <p class="timeline-desc">
+              Mengerjakan berbagai project pembuatan website portfolio, sistem katalog digital untuk UMKM daerah Gresik, eksplorasi framework modern, serta implementasi otomasi web dan integrasi asisten cerdas AI.
+            </p>
+            <div class="tech-pills">
+              <span>NODE.JS</span>
+              <span>EXPRESS</span>
+              <span>REST API</span>
+              <span>FIGMA</span>
+              <span>AI INTEGRATION</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. TECH STACK / SKILLS SECTION ==================== -->
+  <section id="tech-stack" class="tech-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">SKILLS & TOOLS</span>
+        <h2 class="section-title">My Tech Stack</h2>
+      </div>
+
+      <!-- Categories matching reference video -->
+      <div class="tech-categories">
+
+        <!-- Category 1: Frontend -->
+        <div class="tech-category-group">
+          <div class="category-info">
+            <h3 class="category-title">Frontend Languages & Frameworks</h3>
+            <p class="category-sub">Peralatan dan teknologi yang saya gunakan untuk merancang antarmuka web modern, responsif, dan interaktif.</p>
+          </div>
+          <div class="tech-cards-grid">
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l8 4.5v11L12 22 4 17.5v-11L12 2z"></path>
+                </svg>
+              </div>
+              <span class="tech-name">HTML5 / CSS3</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">JS</span>
+              </div>
+              <span class="tech-name">JavaScript (ES6+)</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">TW</span>
+              </div>
+              <span class="tech-name">Tailwind CSS</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(30 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-30 12 12)"></ellipse>
+                </svg>
+              </div>
+              <span class="tech-name">React.js</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">BS</span>
+              </div>
+              <span class="tech-name">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Backend & Database -->
+        <div class="tech-category-group">
+          <div class="category-info">
+            <h3 class="category-title">Backend & Database Core</h3>
+            <p class="category-sub">Fondasi logika server, arsitektur basis data, dan API terstruktur untuk keandalan sistem informasi.</p>
+          </div>
+          <div class="tech-cards-grid">
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">PHP</span>
+              </div>
+              <span class="tech-name">PHP Modern</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">Node</span>
+              </div>
+              <span class="tech-name">Node.js</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <span class="tech-name">MySQL</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">API</span>
+              </div>
+              <span class="tech-name">RESTful APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: System Tools & Design -->
+        <div class="tech-category-group">
+          <div class="category-info">
+            <h3 class="category-title">System Analysis, Tools & Design</h3>
+            <p class="category-sub">Alat analisis proses bisnis, kontrol versi kode, serta prototyping visual.</p>
+          </div>
+          <div class="tech-cards-grid">
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+                  <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+                  <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+                </svg>
+              </div>
+              <span class="tech-name">Figma (UI/UX)</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="6" y1="3" x2="6" y2="15"></line>
+                  <circle cx="18" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M18 9a9 9 0 0 1-9 9"></path>
+                </svg>
+              </div>
+              <span class="tech-name">Git & GitHub</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="tech-name">VS Code</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">UML</span>
+              </div>
+              <span class="tech-name">UML & BPMN</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. SELECTED WORKS / PROJECTS ==================== -->
+  <section id="projects" class="projects-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PORTFOLIO</span>
+        <h2 class="section-title">Selected Works</h2>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+        <button class="filter-btn" data-filter="web">Web Application</button>
+        <button class="filter-btn" data-filter="system">Sistem Informasi</button>
+        <button class="filter-btn" data-filter="ai">AI & Otomasi</button>
+      </div>
+
+      <!-- Projects Grid (Reference Cards) -->
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card" data-category="system">
+          <div class="project-thumb">
+            <img src="assets/siakad.png.jpg" alt="SIAKAD Sunan Gresik Portal" class="project-img">
+            <span class="category-badge">Sistem Informasi</span>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">SIAKAD Sunan Gresik Portal</h3>
+            <p class="project-excerpt">
+              Prototipe sistem informasi akademik terintegrasi untuk mahasiswa & dosen dengan dashboard nilai, kartu rencana studi (KRS), dan monitoring perkuliahan realtime.
+            </p>
+            <div class="project-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Bootstrap</span>
+              <span>Sistem Akademik</span>
+            </div>
+            <button class="btn-view-details" onclick="openProjectModal('siakad')">
+              <span>VIEW DETAILS</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-category="web">
+          <div class="project-thumb">
+            <img src="assets/project-gresikmart.svg" alt="GresikMart E-Commerce & UMKM" class="project-img">
+            <span class="category-badge">Web Application</span>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">GresikMart E-Commerce & UMKM</h3>
+            <p class="project-excerpt">
+              Platform katalog produk digital dan sistem pemesanan online untuk memberdayakan pelaku UMKM daerah Gresik dengan navigasi yang cepat dan responsif.
+            </p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>Tailwind CSS</span>
+              <span>REST API</span>
+              <span>E-Commerce</span>
+            </div>
+            <button class="btn-view-details" onclick="openProjectModal('gresikmart')">
+              <span>VIEW DETAILS</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-category="ai">
+          <div class="project-thumb">
+            <img src="assets/project-portfolio.svg" alt="Smart Portfolio with AI Assistant" class="project-img">
+            <span class="category-badge">AI & Interactive</span>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">Smart Portfolio with AI Assistant</h3>
+            <p class="project-excerpt">
+              Website portofolio modern berkecepatan tinggi dengan dark mode, micro-interactions, serta bot AI asisten interaktif untuk menjawab pertanyaan pengunjung secara instan.
+            </p>
+            <div class="project-tags">
+              <span>HTML5 / CSS3</span>
+              <span>Vanilla JS</span>
+              <span>Smart Bot Engine</span>
+              <span>Responsive UI</span>
+            </div>
+            <button class="btn-view-details" onclick="openProjectModal('portfolio')">
+              <span>VIEW DETAILS</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- View More Button -->
+      <div class="view-more-container">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-pill">
+          <span>VIEW MORE PROJECTS</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. CONTACT ME SECTION ==================== -->
+  <section id="contact" class="contact-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2 class="section-title">Contact Me</h2>
+      </div>
+
+      <div class="contact-box-wrapper">
+        <div class="contact-card">
+          <h3 class="contact-card-title">Send an Email directly.</h3>
+          <p class="contact-card-sub">Tertarik berkolaborasi, berdiskusi mengenai proyek web & sistem informasi, atau ingin terhubung? Kirimkan pesan Anda di bawah ini:</p>
+
+          <form id="contact-form" class="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label for="name">NAME</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">EMAIL</label>
+              <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">MESSAGE</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn btn-send-message">
+              <span class="btn-text">SEND MESSAGE</span>
+              <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Quick Contact Cards Footer -->
+          <div class="quick-contact-grid">
+            <div class="quick-card">
+              <div class="q-icon"></div>
+              <div>
+                <strong>Whatsapp</strong>
+                <p>+6287733430941</p>
+              </div>
+            </div>
+            <div class="quick-card">
+              <div class="q-icon"></div>
+              <div>
+                <strong>Instagram</strong>
+                <p>@eeiiqqs27</p>
+              </div>
+            </div>
+            <div class="quick-card">
+              <div class="q-icon"></div>
+              <div>
+                <strong>Email</strong>
+                <p>faiqfanani@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-brand">Faiq Fanani</span>
+        <p>© 2026 Faiq Fanani • Mahasiswa Sistem Informasi Universitas Sunan Gresik. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== 11. AI ASSISTANT WIDGET (REFERENCE FEATURE) ==================== -->
+  <div class="ai-widget-wrapper" id="ai-assistant">
+    <!-- Floating Launcher Pill/Button -->
+    <button id="ai-toggle-btn" class="ai-launcher-btn" aria-label="Buka Faiq AI Assistant">
+      <div class="ai-badge-avatar">
+        <span>AI</span>
+      </div>
+      <div class="ai-launcher-text">
+        <span class="ai-btn-title">Faiq Assistant</span>
+        <span class="ai-btn-status"><span class="dot-online"></span> Online</span>
+      </div>
+    </button>
+
+    <!-- Chat Window Modal -->
+    <div id="ai-chat-box" class="ai-chat-window">
+      <!-- Header -->
+      <div class="ai-chat-header">
+        <div class="ai-chat-header-info">
+          <div class="ai-avatar-circle">AI</div>
+          <div>
+            <h4 class="ai-bot-name">Faiq Assistant</h4>
+            <span class="ai-bot-status"><span class="dot-online"></span> Online</span>
+          </div>
+        </div>
+        <button id="ai-close-btn" class="ai-close-btn" aria-label="Tutup Chat">✕</button>
+      </div>
+
+      <!-- Messages Stream -->
+      <div id="ai-messages" class="ai-chat-messages">
+        <!-- Initial Bot Greeting -->
+        <div class="ai-msg bot">
+          <div class="ai-msg-content">
+            <p>Halo! Saya adalah <strong>asisten AI Faiq Fanani</strong>. Ada yang bisa saya bantu terkait profil, keahlian, status kuliah di <em>Universitas Sunan Gresik</em>, atau proyek portofolio Faiq?</p>
+            <span class="msg-time" id="greeting-time">Baru saja</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggested Quick Questions -->
+      <div class="ai-quick-prompts">
+        <button class="prompt-chip" onclick="sendQuickPrompt('kamu siapa?')">kamu siapa?</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Faiq kuliah di mana?')">Kuliah di mana?</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Keahlian Faiq apa saja?')">Keahlian apa saja?</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Proyek apa yang pernah dibuat?')">Proyek apa saja?</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Bagaimana cara menghubungi Faiq?')">Cara kontak?</button>
+      </div>
+
+      <!-- Input Footer -->
+      <form id="ai-chat-form" class="ai-chat-input-bar" onsubmit="handleAiChat(event)">
+        <input type="text" id="ai-input" placeholder="Tanyakan apapun tentang Faiq..." autocomplete="off" required>
+        <button type="submit" class="ai-send-btn" aria-label="Kirim Pesan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== 12. PROJECT DETAIL MODAL ==================== -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeProjectModal()">✕</button>
+      <div class="modal-content" id="modal-project-content">
+        <!-- Injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 13. CV MODAL ==================== -->
+  <div id="cv-modal" class="modal-overlay">
+    <div class="modal-dialog cv-dialog">
+      <button class="modal-close-btn" onclick="closeCvModal()">✕</button>
+      <div class="cv-modal-content">
+        <div class="cv-header">
+          <div class="cv-badge">CURRICULUM VITAE</div>
+          <h2>Faiq Fanani</h2>
+          <p class="cv-subtitle">Mahasiswa Sistem Informasi • Universitas Sunan Gresik</p>
+          <p class="cv-location">📍 Gresik, Jawa Timur, Indonesia | ✉️ faiqfanani@example.com</p>
+        </div>
+
+        <div class="cv-body">
+          <div class="cv-section">
+            <h3>Ringkasan Profil</h3>
+            <p>Mahasiswa Sistem Informasi yang memiliki ketertarikan tinggi dalam web engineering, analisis sistem berbasis proses bisnis, manajemen basis data, serta antarmuka modern yang user-friendly.</p>
+          </div>
+
+          <div class="cv-section">
+            <h3>Pendidikan</h3>
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <strong>S1 Sistem Informasi</strong>
+                <span class="cv-date">2023 - Sekarang</span>
+              </div>
+              <p>Universitas Sunan Gresik • Status: Mahasiswa Aktif</p>
+              <small>Fokus: Analisis & Perancangan Sistem, Basis Data, Rekayasa Web, Pemrograman Terstruktur.</small>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Keahlian Utama</h3>
+            <ul class="cv-skills-list">
+              <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap, React.js dasar</li>
+              <li><strong>Backend & Database:</strong> PHP, Node.js dasar, MySQL, REST API</li>
+              <li><strong>Perancangan Sistem:</strong> UML, BPMN, DFD, Database Normalization</li>
+              <li><strong>Tools:</strong> Figma, Git, GitHub, VS Code</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-actions">
+          <button class="btn btn-primary" onclick="window.print()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Cetak / Simpan PDF</span>
+          </button>
+          <button class="btn btn-outline" onclick="closeCvModal()">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-notification"></div>
+
+  <script>
+/**
+ * FAIQ FANANI - PORTFOLIO INTERACTIVE JAVASCRIPT
+ * Features: Loading Screen, Dark/Light Mode, Scrollspy, Typewriter,
+ *           Filterable Projects, Project Modal, CV Preview,
+ *           Contact Form Toast, and Smart Interactive AI Assistant.
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // =========================================================================
+  // 1. LOADING SCREEN ANIMATION
+  // =========================================================================
+  const loadingScreen = document.getElementById('loading-screen');
+  setTimeout(() => {
+    if (loadingScreen) {
+      loadingScreen.classList.add('fade-out');
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 600);
+    }
+  }, 1200);
+
+  // =========================================================================
+  // 1B. PROFILE PHOTO LOADER & INTERACTIVE CHANGER
+  // =========================================================================
+  const photoFileInput = document.getElementById('photo-file-input');
+  const avatarPhotoImg = document.getElementById('avatar-photo-img');
+  const aboutAvatarImg = document.getElementById('about-avatar-img');
+
+  // Load saved photo from localStorage if user chose one previously
+  const savedPhoto = localStorage.getItem('faiq_profile_photo');
+  if (savedPhoto) {
+    if (avatarPhotoImg) avatarPhotoImg.src = savedPhoto;
+    if (aboutAvatarImg) aboutAvatarImg.src = savedPhoto;
+  }
+
+  if (photoFileInput) {
+    photoFileInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const photoData = event.target.result;
+          if (avatarPhotoImg) avatarPhotoImg.src = photoData;
+          if (aboutAvatarImg) aboutAvatarImg.src = photoData;
+          try {
+            localStorage.setItem('faiq_profile_photo', photoData);
+          } catch (err) {
+            console.warn('Ukuran foto terlalu besar untuk LocalStorage, foto tetap ditampilkan untuk sesi ini.');
+          }
+          showToast('Foto profil berhasil diperbarui! 📸');
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+
+  // =========================================================================
+  // 2. THEME SWITCHER (DARK / LIGHT MODE)
+  // =========================================================================
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+
+  // Check saved theme or system preference
+  const savedTheme = localStorage.getItem('faiq_theme') || 
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  htmlElement.setAttribute('data-theme', savedTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('faiq_theme', newTheme);
+      showToast(`Tema diganti ke mode ${newTheme === 'dark' ? 'Gelap 🌙' : 'Terang ☀️'}`);
+    });
+  }
+
+  // =========================================================================
+  // 3. MOBILE MENU TOGGLE
+  // =========================================================================
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+  }
+
+  // =========================================================================
+  // 4. NAVBAR SCROLLSPY & ACTIVE STATE
+  // =========================================================================
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links .nav-item');
+
+  function updateActiveNavLink() {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 140;
+      const sectionId = current.getAttribute('id');
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          const anchor = item.querySelector('a');
+          if (anchor && anchor.getAttribute('href') === `#${sectionId}`) {
+            item.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+
+  // =========================================================================
+  // 5. TYPEWRITER EFFECT IN HERO SECTION
+  // =========================================================================
+  const typewriterElement = document.getElementById('typewriter');
+  const phrases = [
+    'Mahasiswa Sistem Informasi',
+    'Universitas Sunan Gresik',
+    'Fullstack Web Developer',
+    'UI/UX & System Analyst',
+    'Tech & Digital Enthusiast'
+  ];
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typeSpeed = 100;
+
+  function typeWriter() {
+    if (!typewriterElement) return;
+
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+      typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+      typeSpeed = 45;
+    } else {
+      typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+      typeSpeed = 95;
+    }
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      isDeleting = true;
+      typeSpeed = 1800; // Pause at end of phrase
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typeSpeed = 400; // Pause before new phrase
+    }
+
+    setTimeout(typeWriter, typeSpeed);
+  }
+
+  setTimeout(typeWriter, 1400);
+
+  // =========================================================================
+  // 6. FILTERABLE PROJECTS
+  // =========================================================================
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filterValue === 'all' || category === filterValue) {
+          card.style.display = 'flex';
+          card.style.animation = 'fadeIn 0.4s ease';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // =========================================================================
+  // 7. CV MODAL TRIGGER
+  // =========================================================================
+  const openCvBtn = document.getElementById('open-cv-btn');
+  const cvModal = document.getElementById('cv-modal');
+
+  if (openCvBtn && cvModal) {
+    openCvBtn.addEventListener('click', () => {
+      cvModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  // Close modal when clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === cvModal) {
+      closeCvModal();
+    }
+    const projectModal = document.getElementById('project-modal');
+    if (e.target === projectModal) {
+      closeProjectModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeCvModal();
+      closeProjectModal();
+    }
+  });
+
+  // =========================================================================
+  // 8. CONTACT FORM SUBMIT HANDLER
+  // =========================================================================
+  window.handleContactSubmit = function(event) {
+    event.preventDefault();
+    const submitBtn = document.getElementById('submit-btn');
+    const form = document.getElementById('contact-form');
+    const name = document.getElementById('name').value;
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Mengirim Pesan...</span>`;
+    }
+
+    setTimeout(() => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <span class="btn-text">SEND MESSAGE</span>
+          <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        `;
+      }
+      form.reset();
+      showToast(`Pesan terkirim! Terima kasih ${name}, Faiq akan segera membalas.`);
+    }, 900);
+  };
+
+  // =========================================================================
+  // 9. AI ASSISTANT WIDGET (REFERENCE FEATURE AS SEEN IN VIDEO)
+  // =========================================================================
+  const aiToggleBtn = document.getElementById('ai-toggle-btn');
+  const aiChatBox = document.getElementById('ai-chat-box');
+  const aiCloseBtn = document.getElementById('ai-close-btn');
+  const aiMessages = document.getElementById('ai-messages');
+  const aiInput = document.getElementById('ai-input');
+  const greetingTime = document.getElementById('greeting-time');
+
+  if (greetingTime) {
+    const now = new Date();
+    greetingTime.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+  if (aiToggleBtn && aiChatBox) {
+    aiToggleBtn.addEventListener('click', () => {
+      aiChatBox.classList.toggle('open');
+      if (aiChatBox.classList.contains('open')) {
+        setTimeout(() => aiInput && aiInput.focus(), 200);
+      }
+    });
+  }
+
+  if (aiCloseBtn && aiChatBox) {
+    aiCloseBtn.addEventListener('click', () => {
+      aiChatBox.classList.remove('open');
+    });
+  }
+
+  // Predefined AI knowledge base about Faiq Fanani
+  const aiKnowledge = [
+    {
+      keywords: ['kamu siapa', 'siapa kamu', 'siapa anda', 'asisten', 'bot', 'what are you', 'who are you'],
+      answer: 'Saya adalah <strong>Faiq Assistant</strong>, asisten AI pribadi yang dirancang khusus untuk merepresentasikan <strong>Faiq Fanani</strong>. Saya siap membantu Anda mengetahui lebih dalam tentang latar belakang pendidikan, keahlian teknis, dan portofolio proyek Faiq.'
+    },
+    {
+      keywords: ['kuliah', 'kampus', 'universitas', 'sunan gresik', 'jurusan', 'prodi', 'sistem informasi', 'angkatan', 'mahasiswa', 'pendidikan', 'school', 'study'],
+      answer: 'Faiq Fanani adalah <strong>Mahasiswa aktif program studi S1 Sistem Informasi di Universitas Sunan Gresik</strong>. Di kampusnya, Faiq berfokus pada rekayasa perangkat lunak web, pemodelan sistem bisnis, manajemen basis data, dan implementasi teknologi informasi modern.'
+    },
+    {
+      keywords: ['keahlian', 'skill', 'kemampuan', 'bisa apa', 'stack', 'tech', 'bahasa', 'pemrograman', 'frontend', 'backend', 'database'],
+      answer: 'Keahlian utama Faiq mencakup:<br>• <strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), Tailwind CSS, Bootstrap, React.js dasar.<br>• <strong>Backend & DB:</strong> PHP, Node.js dasar, MySQL, REST API.<br>• <strong>System Analysis:</strong> Pemodelan UML, BPMN, DFD, Normalisasi Database.<br>• <strong>Tools:</strong> Figma (UI/UX), Git & GitHub, VS Code.'
+    },
+    {
+      keywords: ['proyek', 'project', 'portofolio', 'portfolio', 'karya', 'siakad', 'gresikmart', 'aplikasi', 'buat apa'],
+      answer: 'Faiq telah mengembangkan beberapa proyek unggulan:<br>1. <strong>SIAKAD Sunan Gresik Portal:</strong> Sistem portal akademik dengan dashboard nilai, jadwal perkuliahan, dan modul KRS.<br>2. <strong>GresikMart:</strong> Platform e-commerce & katalog digital untuk mendukung UMKM daerah Gresik.<br>3. <strong>Smart Portfolio Web:</strong> Website portofolio interaktif ini yang dilengkapi dengan bot AI asisten pribadi!'
+    },
+    {
+      keywords: ['kontak', 'hubungi', 'contact', 'email', 'wa', 'whatsapp', 'hire', 'kerja', 'kolaborasi', 'telepon', 'dm'],
+      answer: 'Anda dapat menghubungi Faiq Fanani secara langsung melalui:<br>• <strong>Email:</strong> faiqfanani@example.com<br>• <strong>Lokasi:</strong> Gresik, Jawa Timur, Indonesia<br>• Anda juga bisa mengisi formulir langsung di bagian <em>Contact Me</em> di website ini.'
+    },
+    {
+      keywords: ['lokasi', 'asal', 'tinggal', 'gresik', 'kota', 'domisili', 'where'],
+      answer: 'Faiq berdomisili di <strong>Gresik, Jawa Timur, Indonesia</strong> dan saat ini menempuh perkuliahan di Universitas Sunan Gresik.'
+    },
+    {
+      keywords: ['halo', 'hai', 'hello', 'hi', 'pagi', 'siang', 'sore', 'malam', 'assalamualaikum'],
+      answer: 'Halo! Selamat datang di portofolio Faiq Fanani. Ada yang ingin Anda ketahui tentang Faiq, jurusannya di Universitas Sunan Gresik, atau proyek yang sedang ia kerjakan?'
+    }
+  ];
+
+  function getAiResponse(userText) {
+    const cleanText = userText.toLowerCase().trim();
+
+    for (const item of aiKnowledge) {
+      const match = item.keywords.some(keyword => cleanText.includes(keyword));
+      if (match) {
+        return item.answer;
+      }
+    }
+
+    return `Pertanyaan yang menarik! Faiq Fanani adalah mahasiswa <strong>Sistem Informasi Universitas Sunan Gresik</strong> yang antusias dalam web development dan analisis sistem. Anda dapat bertanya seputar <em>"Keahlian Faiq"</em>, <em>"Kampus & Pendidikan"</em>, <em>"Proyek yang pernah dibuat"</em>, atau <em>"Cara menghubungi Faiq"</em>.`;
+  }
+
+  window.handleAiChat = function(event) {
+    event.preventDefault();
+    if (!aiInput) return;
+    const text = aiInput.value.trim();
+    if (!text) return;
+
+    appendMessage('user', text);
+    aiInput.value = '';
+
+    // Show typing indicator
+    const typingIndicator = showTypingIndicator();
+
+    setTimeout(() => {
+      typingIndicator.remove();
+      const reply = getAiResponse(text);
+      appendMessage('bot', reply);
+    }, 600);
+  };
+
+  window.sendQuickPrompt = function(promptText) {
+    if (!aiChatBox.classList.contains('open')) {
+      aiChatBox.classList.add('open');
+    }
+    if (aiInput) aiInput.value = promptText;
+    const form = document.getElementById('ai-chat-form');
+    if (form) {
+      form.dispatchEvent(new Event('submit', { cancelable: true }));
+    }
+  };
+
+  function appendMessage(sender, text) {
+    if (!aiMessages) return;
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `ai-msg ${sender}`;
+    msgDiv.innerHTML = `
+      <div class="ai-msg-content">
+        <p>${text}</p>
+        <span class="msg-time">${timeStr}</span>
+      </div>
+    `;
+
+    aiMessages.appendChild(msgDiv);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+  }
+
+  function showTypingIndicator() {
+    const indicator = document.createElement('div');
+    indicator.className = 'ai-msg bot typing-ind';
+    indicator.innerHTML = `
+      <div class="ai-msg-content">
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    `;
+    aiMessages.appendChild(indicator);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+    return indicator;
+  }
+
+});
+
+// =========================================================================
+// 10. PROJECT DETAIL MODAL DATA & FUNCTIONS
+// =========================================================================
+const projectsData = {
+  siakad: {
+    title: 'SIAKAD Sunan Gresik Portal',
+    category: 'Sistem Informasi Kampus',
+    description: 'SIAKAD Portal adalah prototipe sistem informasi akademik terpadu yang dirancang untuk mempermudah civitas akademika Universitas Sunan Gresik dalam mengelola perkuliahan, kartu rencana studi (KRS), transkrip nilai, jadwal perkuliahan, dan rekapitulasi presensi.',
+    features: [
+      'Dashboard Mahasiswa & Dosen dengan visualisasi progres akademik',
+      'Manajemen Pengisian dan Persetujuan Kartu Rencana Studi (KRS)',
+      'Sistem Input Nilai Dosen & Kalkulasi Indeks Prestasi (IPK/IPS) otomatis',
+      'Database relasional teroptimasi dengan perlindungan otentikasi sesi'
+    ],
+    techStack: ['PHP Modern', 'MySQL Database', 'Bootstrap 5', 'JavaScript', 'HTML5/CSS3'],
+    links: { demo: '#', github: 'https://github.com' }
+  },
+  gresikmart: {
+    title: 'GresikMart E-Commerce & UMKM Platform',
+    category: 'Web Application & E-Commerce',
+    description: 'Platform katalog digital dan marketplace berbasis web untuk memberdayakan UMKM di daerah Kabupaten Gresik. Memungkinkan pedagang memajang produk lokal khas Gresik, menerima pemesanan, dan mengelola stok dengan antarmuka yang ramah pengguna.',
+    features: [
+      'Katalog produk interaktif dengan pencarian cepat dan filter kategori',
+      'Keranjang belanja (cart) berbasis LocalStorage dan sinkronisasi server',
+      'Integrasi checkout WhatsApp otomatis untuk mempermudah pembeli UMKM',
+      'Desain responsif ultra-cepat menggunakan Tailwind CSS'
+    ],
+    techStack: ['JavaScript (ES6+)', 'Tailwind CSS', 'REST API', 'JSON Store'],
+    links: { demo: '#', github: 'https://github.com' }
+  },
+  portfolio: {
+    title: 'Personal Portfolio with AI Assistant',
+    category: 'Interactive Web & AI Engine',
+    description: 'Website portofolio generasi terbaru yang menggabungkan estetika minimalis, dark/light mode otomatis, micro-interactions, serta bot AI asisten interaktif yang dapat menjawab pertanyaan pengunjung seputar profil Faiq Fanani secara instan.',
+    features: [
+      'Dark & Light Mode Switcher dengan penyimpanan preferensi di LocalStorage',
+      'Asisten Virtual AI (Faiq Assistant) dengan pemrosesan bahasa alami (NLP sederhana)',
+      'Timeline pengalaman vertikal interaktif dengan animasi scroll',
+      '100% Responsif, performa ringan tanpa ketergantungan library berat'
+    ],
+    techStack: ['HTML5 Semantic', 'CSS3 Variables & Animations', 'Vanilla JavaScript', 'Lucide Icons'],
+    links: { demo: '#', github: 'https://github.com' }
+  }
+};
+
+window.openProjectModal = function(projectId) {
+  const modal = document.getElementById('project-modal');
+  const contentContainer = document.getElementById('modal-project-content');
+  const project = projectsData[projectId];
+
+  if (!project || !contentContainer || !modal) return;
+
+  const featuresHtml = project.features.map(f => `<li>${f}</li>`).join('');
+  const tagsHtml = project.techStack.map(t => `<span class="project-tag-pill">${t}</span>`).join('');
+
+  contentContainer.innerHTML = `
+    <div class="modal-project-header">
+      <span class="modal-category">${project.category}</span>
+      <h2 class="modal-title">${project.title}</h2>
+    </div>
+
+    <div class="modal-project-body">
+      <p class="modal-desc">${project.description}</p>
+      
+      <div class="modal-section-group">
+        <h4>Fitur Utama:</h4>
+        <ul class="modal-features-list">
+          ${featuresHtml}
+        </ul>
+      </div>
+
+      <div class="modal-section-group">
+        <h4>Teknologi Digunakan:</h4>
+        <div class="modal-tech-tags">
+          ${tagsHtml}
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-project-footer">
+      <a href="${project.links.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <span>Buka Repositori GitHub</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <button class="btn btn-outline" onclick="closeProjectModal()">Tutup</button>
+    </div>
+  `;
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeProjectModal = function() {
+  const modal = document.getElementById('project-modal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+};
+
+window.closeCvModal = function() {
+  const cvModal = document.getElementById('cv-modal');
+  if (cvModal) {
+    cvModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+};
+
+// =========================================================================
+// 11. TOAST NOTIFICATION HELPER
+// =========================================================================
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3200);
+}
+
+</script>
+</body>
+</html>
