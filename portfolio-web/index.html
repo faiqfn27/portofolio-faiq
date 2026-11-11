@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faiq Fanani | Portofolio - Mahasiswa Sistem Informasi Universitas Sunan Gresik</title>
+  <meta name="description" content="Portofolio resmi Faiq Fanani, Mahasiswa Sistem Informasi Universitas Sunan Gresik. Web developer, UI/UX enthusiast, dan perancang sistem informasi digital.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== 1. LOADING SCREEN ==================== -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="logo-text">FF</span>
+      </div>
+      <h2 class="loader-title">Faiq Fanani</h2>
+      <p class="loader-subtitle">PORTFOLIO LOADING</p>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. FLOATING PILL NAVBAR ==================== -->
+  <header class="header-container">
+    <nav class="pill-navbar" id="navbar">
+      <a href="#home" class="nav-brand">
+        <span class="brand-badge">FF.</span>
+        <span class="brand-title">PORTFOLIO.</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-item active"><a href="#home">Home</a></li>
+        <li class="nav-item"><a href="#about">About</a></li>
+        <li class="nav-item"><a href="#experience">Experience</a></li>
+        <li class="nav-item"><a href="#tech-stack">Tech Stack</a></li>
+        <li class="nav-item"><a href="#projects">Projects</a></li>
+        <li class="nav-item"><a href="#contact">Contacts</a></li>
+      </ul>
+
+      <!-- Right Controls: Theme Toggle & Mobile Menu -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn theme-btn" aria-label="Ganti Tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="mobile-toggle" class="icon-btn mobile-menu-btn" aria-label="Buka Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-menu" class="mobile-menu">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#tech-stack" class="mobile-link">Tech Stack</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#contact" class="mobile-link">Contacts</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== 3. HERO SECTION ==================== -->
+  <section id="home" class="hero-section section-padding">
+    <div class="container hero-container">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="status-pill">
+          <span class="pulsing-dot"></span>
+          <span>Open for Projects & Collaborations</span>
+        </div>
+
+        <h1 class="hero-greeting">
+          Hi, I'm <span class="highlight-text">Faiq Fanani</span>
+        </h1>
+
+        <div class="hero-typing-wrap">
+          <span class="typing-text" id="typewriter"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+
+        <p class="hero-bio">
+          Halo! Saya mahasiswa <strong>Sistem Informasi di Universitas Sunan Gresik</strong>. Saya memiliki passion mendalam dalam pengembangan web modern, perancangan antarmuka yang intuitif, serta analisis sistem untuk menghadirkan solusi digital yang fungsional dan berdampak nyata.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Work</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Social Connect -->
+        <div class="hero-connect">
+          <span class="connect-label">CONNECT</span>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="mailto:faiqfanani27@gmail.com" class="social-btn" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual & Floating Info Cards (matching reference video) -->
+      <div class="hero-visual">
+        <div class="avatar-card-wrapper">
+          <div class="glow-backdrop"></div>
+          
+          <!-- Avatar Photo Card -->
+          <div class="avatar-card" id="hero-avatar-card">
+            <img src="assets/profil.jpg.jpg" alt="Faiq Fanani" class="avatar-photo" id="avatar-photo-img" onerror="this.onerror=null; this.src='assets/default-avatar.svg';">
+            
+            <!-- Quick change photo button -->
+            <label for="photo-file-input" class="change-photo-badge" title="Klik untuk memilih foto dari komputer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <span>Ubah Foto</span>
+            </label>
+            <input type="file" id="photo-file-input" accept="image/*" style="display: none;">
+
+            <div class="avatar-badge-status">
+              <span class="active-badge-dot"></span>
+              <span>Online • Gresik, ID</span>
+            </div>
+          </div>
+
+          <!-- Floating Info Pills (Reference feature) -->
+          <div class="floating-pill pill-top">
+            <div class="pill-icon">🎓</div>
+            <div class="pill-text">
+              <span class="pill-label">Universitas</span>
+              <span class="pill-value">Sunan Gresik</span>
+            </div>
+          </div>
+
+          <div class="floating-pill pill-mid">
+            <div class="pill-icon">💻</div>
+            <div class="pill-text">
+              <span class="pill-label">Program Studi</span>
+              <span class="pill-value">Sistem Informasi</span>
+            </div>
+          </div>
+
+          <div class="floating-pill pill-bottom">
+            <div class="pill-icon">⚡</div>
+            <div class="pill-text">
+              <span class="pill-label">Focus Area</span>
+              <span class="pill-value">Web & System Dev</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. INFINITE MARQUEE TICKER ==================== -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>FAIQ FANANI</span> <span class="marquee-star">✦</span>
+        <span>SISTEM INFORMASI</span> <span class="marquee-star">✦</span>
+        <span>UNIVERSITAS SUNAN GRESIK</span> <span class="marquee-star">✦</span>
+        <span>FULLSTACK WEB DEVELOPER</span> <span class="marquee-star">✦</span>
+        <span>UI/UX DESIGNER</span> <span class="marquee-star">✦</span>
+        <span>DATABASE & SYSTEM ANALYSIS</span> <span class="marquee-star">✦</span>
+        <span>PROBLEM SOLVER</span> <span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>FAIQ FANANI</span> <span class="marquee-star">✦</span>
+        <span>SISTEM INFORMASI</span> <span class="marquee-star">✦</span>
+        <span>UNIVERSITAS SUNAN GRESIK</span> <span class="marquee-star">✦</span>
+        <span>FULLSTACK WEB DEVELOPER</span> <span class="marquee-star">✦</span>
+        <span>UI/UX DESIGNER</span> <span class="marquee-star">✦</span>
+        <span>DATABASE & SYSTEM ANALYSIS</span> <span class="marquee-star">✦</span>
+        <span>PROBLEM SOLVER</span> <span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 5. ABOUT ME SECTION ==================== -->
+  <section id="about" class="about-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DISCOVER</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Silhouette & Identity Visual -->
+        <div class="about-visual">
+          <div class="about-card-portrait">
+            <div class="silhouette-circle">
+              <img src="assets/profile.jpg" alt="Faiq Fanani" class="about-avatar-photo" id="about-avatar-img" onerror="this.onerror=null; this.src='assets/default-avatar.svg';">
+            </div>
+            <div class="portrait-details">
+              <h3>Faiq Fanani</h3>
+              <p>Undergraduate Student</p>
+              <span class="campus-badge">📍 Universitas Sunan Gresik</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story, Approach & Personal Details Grid -->
+        <div class="about-info">
+          <div class="about-two-col">
+            <div class="info-card">
+              <div class="info-card-header">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <h3>Who Am I</h3>
+              </div>
+              <p>
+                Saya adalah mahasiswa program studi <strong>Sistem Informasi di Universitas Sunan Gresik</strong>. Ketertarikan saya terletak pada persimpangan antara logika pemrograman, perancangan arsitektur data, dan pengalaman pengguna digital yang intuitif serta berdaya guna tinggi bagi organisasi.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-header">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <h3>My Approach</h3>
+              </div>
+              <p>
+                Saya mengutamakan <em>clean code</em>, performa tinggi, desain responsif multi-device, serta pendekatan berbasis data. Setiap project dirancang dengan analisis kebutuhan yang matang untuk memastikan solusi teknologi tepat guna dan mudah dikembangkan lebih lanjut.
+              </p>
+            </div>
+          </div>
+
+          <!-- Personal Details Table/Cards (matching reference video) -->
+          <div class="personal-details-card">
+            <h4 class="details-card-title">Personal Details</h4>
+            <div class="details-grid">
+              <div class="detail-item">
+                <span class="detail-label">NAME</span>
+                <span class="detail-val">Faiq Fanani</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">EDUCATION</span>
+                <span class="detail-val">Universitas Sunan Gresik</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">MAJOR</span>
+                <span class="detail-val">Sistem Informasi (S1)</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">LOCATION</span>
+                <span class="detail-val">Gresik, Jawa Timur, Indonesia</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">STATUS</span>
+                <span class="detail-val text-green">Mahasiswa Aktif</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">EMAIL</span>
+                <span class="detail-val">faiqfanani27@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. EXPERIENCE / EDUCATION TIMELINE ==================== -->
+  <section id="experience" class="experience-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CAREER PATH</span>
+        <h2 class="section-title">Work & Academic Experience</h2>
+      </div>
+
+      <!-- Vertical Timeline with Center Stem (Reference Video Style) -->
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2025 - SEKARANG</span>
+            <h3 class="timeline-role">Mahasiswa Sistem Informasi</h3>
+            <h4 class="timeline-company">UNIVERSITAS SUNAN GRESIK</h4>
+            <p class="timeline-desc">
+              Menempuh studi sarjana dengan fokus pada perancangan sistem informasi, rekayasa perangkat lunak web, pemodelan proses bisnis (BPMN), manajemen basis data relasional (RDBMS), serta implementasi algoritma komputasi untuk efisiensi sistem informasi.
+            </p>
+            <div class="tech-pills">
+              <span>SISTEM INFORMASI</span>
+              <span>DATABASE DESIGN</span>
+              <span>UI/UX DESIGN</span>
+              <span>WEB ENGINEERING</span>
+              <span>ALGORITMA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2025 - SEKARANG</span>
+            <h3 class="timeline-role">Junior Web & System Developer</h3>
+            <h4 class="timeline-company">PROJECT & LAB RISET KAMPUS</h4>
+            <p class="timeline-desc">
+              Mengembangkan prototipe aplikasi web terintegrasi untuk kebutuhan administrasi akademik dan inventaris digital. Berperan aktif dalam perancangan skema database, pembuatan antarmuka modern yang ramah pengguna, serta integrasi endpoint REST API.
+            </p>
+            <div class="tech-pills">
+              <span>HTML5 / CSS3</span>
+              <span>JAVASCRIPT</span>
+              <span>PHP</span>
+              <span>MYSQL</span>
+              <span>TAILWIND CSS</span>
+              <span>GIT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2024 - SEKARANG</span>
+            <h3 class="timeline-role">Freelance Web Developer & Tech Explorer</h3>
+            <h4 class="timeline-company">INDEPENDENT PROJECTS</h4>
+            <p class="timeline-desc">
+              Mengerjakan berbagai project pembuatan website portfolio, sistem katalog digital untuk UMKM daerah Gresik, eksplorasi framework modern, serta implementasi otomasi web dan integrasi asisten cerdas AI.
+            </p>
+            <div class="tech-pills">
+              <span>NODE.JS</span>
+              <span>EXPRESS</span>
+              <span>REST API</span>
+              <span>FIGMA</span>
+              <span>AI INTEGRATION</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. TECH STACK / SKILLS SECTION ==================== -->
+  <section id="tech-stack" class="tech-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">SKILLS & TOOLS</span>
+        <h2 class="section-title">My Tech Stack</h2>
+      </div>
+
+      <!-- Categories matching reference video -->
+      <div class="tech-categories">
+
+        <!-- Category 1: Frontend -->
+        <div class="tech-category-group">
+          <div class="category-info">
+            <h3 class="category-title">Frontend Languages & Frameworks</h3>
+            <p class="category-sub">Peralatan dan teknologi yang saya gunakan untuk merancang antarmuka web modern, responsif, dan interaktif.</p>
+          </div>
+          <div class="tech-cards-grid">
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l8 4.5v11L12 22 4 17.5v-11L12 2z"></path>
+                </svg>
+              </div>
+              <span class="tech-name">HTML5 / CSS3</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">JS</span>
+              </div>
+              <span class="tech-name">JavaScript (ES6+)</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">TW</span>
+              </div>
+              <span class="tech-name">Tailwind CSS</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(30 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-30 12 12)"></ellipse>
+                </svg>
+              </div>
+              <span class="tech-name">React.js</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">BS</span>
+              </div>
+              <span class="tech-name">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Backend & Database -->
+        <div class="tech-category-group">
+          <div class="category-info">
+            <h3 class="category-title">Backend & Database Core</h3>
+            <p class="category-sub">Fondasi logika server, arsitektur basis data, dan API terstruktur untuk keandalan sistem informasi.</p>
+          </div>
+          <div class="tech-cards-grid">
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">PHP</span>
+              </div>
+              <span class="tech-name">PHP Modern</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">Node</span>
+              </div>
+              <span class="tech-name">Node.js</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <span class="tech-name">MySQL</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">API</span>
+              </div>
+              <span class="tech-name">RESTful APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: System Tools & Design -->
+        <div class="tech-category-group">
+          <div class="category-info">
+            <h3 class="category-title">System Analysis, Tools & Design</h3>
+            <p class="category-sub">Alat analisis proses bisnis, kontrol versi kode, serta prototyping visual.</p>
+          </div>
+          <div class="tech-cards-grid">
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+                  <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+                  <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+                </svg>
+              </div>
+              <span class="tech-name">Figma (UI/UX)</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="6" y1="3" x2="6" y2="15"></line>
+                  <circle cx="18" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M18 9a9 9 0 0 1-9 9"></path>
+                </svg>
+              </div>
+              <span class="tech-name">Git & GitHub</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="tech-name">VS Code</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-box">
+                <span class="tech-letter">UML</span>
+              </div>
+              <span class="tech-name">UML & BPMN</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. SELECTED WORKS / PROJECTS ==================== -->
+  <section id="projects" class="projects-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PORTFOLIO</span>
+        <h2 class="section-title">Selected Works</h2>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+        <button class="filter-btn" data-filter="web">Web Application</button>
+        <button class="filter-btn" data-filter="system">Sistem Informasi</button>
+        <button class="filter-btn" data-filter="ai">AI & Otomasi</button>
+      </div>
+
+      <!-- Projects Grid (Reference Cards) -->
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card" data-category="system">
+          <div class="project-thumb">
+            <img src="assets/siakad.png.jpg" alt="SIAKAD Sunan Gresik Portal" class="project-img">
+            <span class="category-badge">Sistem Informasi</span>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">SIAKAD Sunan Gresik Portal</h3>
+            <p class="project-excerpt">
+              Prototipe sistem informasi akademik terintegrasi untuk mahasiswa & dosen dengan dashboard nilai, kartu rencana studi (KRS), dan monitoring perkuliahan realtime.
+            </p>
+            <div class="project-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Bootstrap</span>
+              <span>Sistem Akademik</span>
+            </div>
+            <button class="btn-view-details" onclick="openProjectModal('siakad')">
+              <span>VIEW DETAILS</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-category="web">
+          <div class="project-thumb">
+            <img src="assets/project-gresikmart.svg" alt="GresikMart E-Commerce & UMKM" class="project-img">
+            <span class="category-badge">Web Application</span>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">GresikMart E-Commerce & UMKM</h3>
+            <p class="project-excerpt">
+              Platform katalog produk digital dan sistem pemesanan online untuk memberdayakan pelaku UMKM daerah Gresik dengan navigasi yang cepat dan responsif.
+            </p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>Tailwind CSS</span>
+              <span>REST API</span>
+              <span>E-Commerce</span>
+            </div>
+            <button class="btn-view-details" onclick="openProjectModal('gresikmart')">
+              <span>VIEW DETAILS</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-category="ai">
+          <div class="project-thumb">
+            <img src="assets/project-portfolio.svg" alt="Smart Portfolio with AI Assistant" class="project-img">
+            <span class="category-badge">AI & Interactive</span>
+          </div>
+
+          <div class="project-info">
+            <h3 class="project-name">Smart Portfolio with AI Assistant</h3>
+            <p class="project-excerpt">
+              Website portofolio modern berkecepatan tinggi dengan dark mode, micro-interactions, serta bot AI asisten interaktif untuk menjawab pertanyaan pengunjung secara instan.
+            </p>
+            <div class="project-tags">
+              <span>HTML5 / CSS3</span>
+              <span>Vanilla JS</span>
+              <span>Smart Bot Engine</span>
+              <span>Responsive UI</span>
+            </div>
+            <button class="btn-view-details" onclick="openProjectModal('portfolio')">
+              <span>VIEW DETAILS</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- View More Button -->
+      <div class="view-more-container">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-pill">
+          <span>VIEW MORE PROJECTS</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. CONTACT ME SECTION ==================== -->
+  <section id="contact" class="contact-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2 class="section-title">Contact Me</h2>
+      </div>
+
+      <div class="contact-box-wrapper">
+        <div class="contact-card">
+          <h3 class="contact-card-title">Send an Email directly.</h3>
+          <p class="contact-card-sub">Tertarik berkolaborasi, berdiskusi mengenai proyek web & sistem informasi, atau ingin terhubung? Kirimkan pesan Anda di bawah ini:</p>
+
+          <form id="contact-form" class="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label for="name">NAME</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">EMAIL</label>
+              <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">MESSAGE</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn btn-send-message">
+              <span class="btn-text">SEND MESSAGE</span>
+              <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Quick Contact Cards Footer -->
+          <div class="quick-contact-grid">
+            <div class="quick-card">
+              <div class="q-icon"></div>
+              <div>
+                <strong>Whatsapp</strong>
+                <p>+6287733430941</p>
+              </div>
+            </div>
+            <div class="quick-card">
+              <div class="q-icon"></div>
+              <div>
+                <strong>Instagram</strong>
+                <p>@eeiiqqs27</p>
+              </div>
+            </div>
+            <div class="quick-card">
+              <div class="q-icon"></div>
+              <div>
+                <strong>Email</strong>
+                <p>faiqfanani@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-brand">Faiq Fanani</span>
+        <p>© 2026 Faiq Fanani • Mahasiswa Sistem Informasi Universitas Sunan Gresik. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== 11. AI ASSISTANT WIDGET (REFERENCE FEATURE) ==================== -->
+  <div class="ai-widget-wrapper" id="ai-assistant">
+    <!-- Floating Launcher Pill/Button -->
+    <button id="ai-toggle-btn" class="ai-launcher-btn" aria-label="Buka Faiq AI Assistant">
+      <div class="ai-badge-avatar">
+        <span>AI</span>
+      </div>
+      <div class="ai-launcher-text">
+        <span class="ai-btn-title">Faiq Assistant</span>
+        <span class="ai-btn-status"><span class="dot-online"></span> Online</span>
+      </div>
+    </button>
+
+    <!-- Chat Window Modal -->
+    <div id="ai-chat-box" class="ai-chat-window">
+      <!-- Header -->
+      <div class="ai-chat-header">
+        <div class="ai-chat-header-info">
+          <div class="ai-avatar-circle">AI</div>
+          <div>
+            <h4 class="ai-bot-name">Faiq Assistant</h4>
+            <span class="ai-bot-status"><span class="dot-online"></span> Online</span>
+          </div>
+        </div>
+        <button id="ai-close-btn" class="ai-close-btn" aria-label="Tutup Chat">✕</button>
+      </div>
+
+      <!-- Messages Stream -->
+      <div id="ai-messages" class="ai-chat-messages">
+        <!-- Initial Bot Greeting -->
+        <div class="ai-msg bot">
+          <div class="ai-msg-content">
+            <p>Halo! Saya adalah <strong>asisten AI Faiq Fanani</strong>. Ada yang bisa saya bantu terkait profil, keahlian, status kuliah di <em>Universitas Sunan Gresik</em>, atau proyek portofolio Faiq?</p>
+            <span class="msg-time" id="greeting-time">Baru saja</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggested Quick Questions -->
+      <div class="ai-quick-prompts">
+        <button class="prompt-chip" onclick="sendQuickPrompt('kamu siapa?')">kamu siapa?</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Faiq kuliah di mana?')">Kuliah di mana?</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Keahlian Faiq apa saja?')">Keahlian apa saja?</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Proyek apa yang pernah dibuat?')">Proyek apa saja?</button>
+        <button class="prompt-chip" onclick="sendQuickPrompt('Bagaimana cara menghubungi Faiq?')">Cara kontak?</button>
+      </div>
+
+      <!-- Input Footer -->
+      <form id="ai-chat-form" class="ai-chat-input-bar" onsubmit="handleAiChat(event)">
+        <input type="text" id="ai-input" placeholder="Tanyakan apapun tentang Faiq..." autocomplete="off" required>
+        <button type="submit" class="ai-send-btn" aria-label="Kirim Pesan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== 12. PROJECT DETAIL MODAL ==================== -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeProjectModal()">✕</button>
+      <div class="modal-content" id="modal-project-content">
+        <!-- Injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 13. CV MODAL ==================== -->
+  <div id="cv-modal" class="modal-overlay">
+    <div class="modal-dialog cv-dialog">
+      <button class="modal-close-btn" onclick="closeCvModal()">✕</button>
+      <div class="cv-modal-content">
+        <div class="cv-header">
+          <div class="cv-badge">CURRICULUM VITAE</div>
+          <h2>Faiq Fanani</h2>
+          <p class="cv-subtitle">Mahasiswa Sistem Informasi • Universitas Sunan Gresik</p>
+          <p class="cv-location">📍 Gresik, Jawa Timur, Indonesia | ✉️ faiqfanani@example.com</p>
+        </div>
+
+        <div class="cv-body">
+          <div class="cv-section">
+            <h3>Ringkasan Profil</h3>
+            <p>Mahasiswa Sistem Informasi yang memiliki ketertarikan tinggi dalam web engineering, analisis sistem berbasis proses bisnis, manajemen basis data, serta antarmuka modern yang user-friendly.</p>
+          </div>
+
+          <div class="cv-section">
+            <h3>Pendidikan</h3>
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <strong>S1 Sistem Informasi</strong>
+                <span class="cv-date">2023 - Sekarang</span>
+              </div>
+              <p>Universitas Sunan Gresik • Status: Mahasiswa Aktif</p>
+              <small>Fokus: Analisis & Perancangan Sistem, Basis Data, Rekayasa Web, Pemrograman Terstruktur.</small>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Keahlian Utama</h3>
+            <ul class="cv-skills-list">
+              <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap, React.js dasar</li>
+              <li><strong>Backend & Database:</strong> PHP, Node.js dasar, MySQL, REST API</li>
+              <li><strong>Perancangan Sistem:</strong> UML, BPMN, DFD, Database Normalization</li>
+              <li><strong>Tools:</strong> Figma, Git, GitHub, VS Code</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-actions">
+          <button class="btn btn-primary" onclick="window.print()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Cetak / Simpan PDF</span>
+          </button>
+          <button class="btn btn-outline" onclick="closeCvModal()">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-notification"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

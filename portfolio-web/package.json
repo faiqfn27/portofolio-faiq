@@ -1,0 +1,18 @@
+{
+  "name": "faiq-fanani-portfolio",
+  "version": "1.0.0",
+  "description": "Portofolio Faiq Fanani - Mahasiswa Sistem Informasi Universitas Sunan Gresik",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "faiq-fanani",
+    "universitas-sunan-gresik",
+    "sistem-informasi",
+    "web-developer"
+  ],
+  "author": "Faiq Fanani",
+  "license": "MIT"
+}

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="martBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#martBg)" />
+
+  <!-- Browser Frame -->
+  <g transform="translate(40, 30)">
+    <rect width="720" height="440" rx="16" fill="#111827" stroke="#047857" stroke-width="2" />
+    
+    <!-- Top Bar -->
+    <rect width="720" height="42" rx="16" fill="#064e3b" />
+    <circle cx="25" cy="21" r="6" fill="#ef4444" />
+    <circle cx="45" cy="21" r="6" fill="#f59e0b" />
+    <circle cx="65" cy="21" r="6" fill="#10b981" />
+    
+    <!-- URL -->
+    <rect x="110" y="10" width="460" height="22" rx="6" fill="#022c22" stroke="#065f46" />
+    <text x="340" y="25" fill="#a7f3d0" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">gresikmart.local/katalog-umkm</text>
+
+    <!-- Navigation Header -->
+    <rect x="0" y="42" width="720" height="45" fill="#0f172a" />
+    <text x="30" y="70" fill="#10b981" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800">🛍️ GRESIKMART</text>
+    
+    <!-- Search Bar -->
+    <rect x="180" y="52" width="280" height="26" rx="13" fill="#1e293b" stroke="#334155" />
+    <text x="200" y="69" fill="#94a3b8" font-family="sans-serif" font-size="11">Cari produk khas Gresik...</text>
+
+    <text x="500" y="70" fill="#f8fafc" font-family="sans-serif" font-size="12" font-weight="600">Kategori</text>
+    <text x="580" y="70" fill="#f8fafc" font-family="sans-serif" font-size="12" font-weight="600">UMKM Mitra</text>
+    <rect x="660" y="52" width="40" height="26" rx="6" fill="#10b981" />
+    <text x="680" y="69" fill="#ffffff" font-family="sans-serif" font-size="12" text-anchor="middle">🛒 3</text>
+
+    <!-- Banner Promo -->
+    <g transform="translate(30, 100)">
+      <rect width="660" height="90" rx="12" fill="url(#heroGrad)" />
+      <text x="25" y="38" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800">Dukung Produk UMKM Lokal Kabupaten Gresik</text>
+      <text x="25" y="60" fill="#ecfdf5" font-family="sans-serif" font-size="12">Katalog digital produk makanan, kerajinan rotan, dan cinderamata khas daerah.</text>
+      <rect x="25" y="68" width="105" height="18" rx="4" fill="#ffffff" />
+      <text x="77" y="81" fill="#065f46" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">Jelajahi Katalog →</text>
+    </g>
+
+    <!-- Product Cards Grid -->
+    <!-- Product 1: Pudak Gresik -->
+    <g transform="translate(30, 205)">
+      <rect width="205" height="215" rx="12" fill="#1e293b" stroke="#334155" />
+      <rect width="205" height="110" rx="12" fill="#334155" />
+      <text x="102" y="65" fill="#f8fafc" font-family="sans-serif" font-size="34" text-anchor="middle">🥮</text>
+      <rect x="12" y="12" width="60" height="18" rx="4" fill="#f59e0b" />
+      <text x="42" y="24" fill="#ffffff" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">BESTSELLER</text>
+      
+      <text x="15" y="135" fill="#f8fafc" font-family="sans-serif" font-size="13" font-weight="700">Pudak Sari Kelapa Khas</text>
+      <text x="15" y="152" fill="#94a3b8" font-family="sans-serif" font-size="10">UMKM Manis Rasa Gresik</text>
+      <text x="15" y="180" fill="#10b981" font-family="sans-serif" font-size="15" font-weight="800">Rp 35.000</text>
+      <rect x="15" y="190" width="175" height="20" rx="6" fill="#10b981" />
+      <text x="102" y="204" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">+ Pesan via WA</text>
+    </g>
+
+    <!-- Product 2: Otak-Otak Bandeng -->
+    <g transform="translate(255, 205)">
+      <rect width="205" height="215" rx="12" fill="#1e293b" stroke="#334155" />
+      <rect width="205" height="110" rx="12" fill="#334155" />
+      <text x="102" y="65" fill="#f8fafc" font-family="sans-serif" font-size="34" text-anchor="middle">🐟</text>
+      <text x="15" y="135" fill="#f8fafc" font-family="sans-serif" font-size="13" font-weight="700">Otak-Otak Bandeng Asli</text>
+      <text x="15" y="152" fill="#94a3b8" font-family="sans-serif" font-size="10">Sentra Bandeng Gresik</text>
+      <text x="15" y="180" fill="#10b981" font-family="sans-serif" font-size="15" font-weight="800">Rp 48.000</text>
+      <rect x="15" y="190" width="175" height="20" rx="6" fill="#10b981" />
+      <text x="102" y="204" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">+ Pesan via WA</text>
+    </g>
+
+    <!-- Product 3: Kerajinan Damar Kurung -->
+    <g transform="translate(485, 205)">
+      <rect width="205" height="215" rx="12" fill="#1e293b" stroke="#334155" />
+      <rect width="205" height="110" rx="12" fill="#334155" />
+      <text x="102" y="65" fill="#f8fafc" font-family="sans-serif" font-size="34" text-anchor="middle">🏮</text>
+      <text x="15" y="135" fill="#f8fafc" font-family="sans-serif" font-size="13" font-weight="700">Lampion Damar Kurung</text>
+      <text x="15" y="152" fill="#94a3b8" font-family="sans-serif" font-size="10">Pengrajin Seni Tradisi</text>
+      <text x="15" y="180" fill="#10b981" font-family="sans-serif" font-size="15" font-weight="800">Rp 120.000</text>
+      <rect x="15" y="190" width="175" height="20" rx="6" fill="#10b981" />
+      <text x="102" y="204" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">+ Pesan via WA</text>
+    </g>
+  </g>
+</svg>
